@@ -1,6 +1,14 @@
 class BooksController < ApplicationController
+  
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+
+	
   def index
-    @books = Book.all
+	  if params[:title]
+		  @books = Book.where('title LIKE ?', "%#{params[:title]}%")
+	  else
+		  @books = Book.all
+	  end
   end  
 
   def show
@@ -44,6 +52,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:title, :text)
+      params.permit(:title, :text)
     end
 end

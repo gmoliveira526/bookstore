@@ -2,6 +2,10 @@
 
 <%= link_to 'New book', new_book_path %>
 
+<%= form_tag(books_path method: :get) do %>Title <%= text_field_tag :title, params[:title] %>
+	<%= submit_tag 'Search', name: nil %>
+<% end %>
+
 <table>
 	<tr>
 		<th>Title</th>
