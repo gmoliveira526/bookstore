@@ -10,31 +10,29 @@
 
 <h2>Reviews</h2>
 <% @book.reviews.each do |review| %>
-  <p>
-    <strong>Reviewer:</strong>
-    <%= review.reviewer %>
-  </p>
-
-  <p>
-    <strong>Review:</strong>
-    <%= review.body %>
-  </p>
+	<p>
+	<strong>Reviewer:</strong>
+	<%= review.reviewer %>
+	</p>
+	
+	<p>
+	<strong>Review:</strong>
+	<%= review.body %>
+	</p>
 <% end %>
  
 <h2>Add a review:</h2>
 <%= form_with(model: [ @book, @book.reviews.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :reviewer %><br>
-    <%= form.text_field :reviewer %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+	<p>
+	<%= form.label :reviewer %><br>
+	<%= form.text_field :reviewer %>
+	</p>
+	<p>
+	<%= form.label :body %><br>
+	<%= form.text_area :body %>
+	</p>
+	<p>
 <% end %>
- 
+   
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
