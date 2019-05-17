@@ -1,4 +1,3 @@
 class Review < ApplicationRecord
-  has_many :reviews
-  validates :title, presence: true
+	belongs_to :book
 end

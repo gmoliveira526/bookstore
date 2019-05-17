@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+ 
+       	get 'welcome/index'
+	root 'welcome#index'
 
-  resources :books  
-
-  root 'welcome#index'	
+	resources :books do
+	  resources :reviews
+  end
 end
