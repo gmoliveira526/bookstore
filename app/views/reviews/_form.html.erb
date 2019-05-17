@@ -1,0 +1,13 @@
+<%= form_with(model: [ @book, @book.reviews.build ], local: true) do |form| %>
+	<p>
+	<%= form.label :reviewer %><br>
+	<%= form.text_field :reviewer %>
+	</p>
+	<p>
+	<%= form.label :body %><br>
+	<%= form.text_area :body %>
+	</p>
+	<p>
+	<%= form.submit %>
+	</p>
+<% end %>
