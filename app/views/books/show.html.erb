@@ -19,6 +19,8 @@
 	<strong>Review:</strong>
 	<%= review.body %>
 	</p>
+
+	<%= link_to 'Delete Review', book_review_path(@book, review), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
  
 <h2>Add a review:</h2>
